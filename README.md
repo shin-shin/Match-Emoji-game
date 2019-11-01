@@ -13,3 +13,7 @@ As a college student during a boring lecture I want to entertain myself while st
 As a bored housewife waiting to pick up my child from school I want to fill in these few minutes by something meaningless, so  that I will not be interrupted during an important task.
 
 As a depressed person I want to feel like I completed something that doesn't require all the energy I don't have.
+
+## Wireframes
+
+![initial state]() ![play state]() ![win]()
