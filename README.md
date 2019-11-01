@@ -6,8 +6,8 @@ This is a "kill time" type of game for bored people on their phones. It is simpl
 
 ## User Stories 
 
-Name: 
+As a college student during a boring lecture I want to entertain myself while still paying some attention to my professor.
 
-Age: 
+As a bored housewife waiting to pick up my child from school I want to fill in these few minutes by something meaningless, so  that I will not be interrupted during an important task.
 
-Use:
+As a depressed person I want to feel like I completed something that doesn't require all the energy I don't have.
