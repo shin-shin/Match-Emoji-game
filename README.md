@@ -2,6 +2,8 @@
 
 This is a "kill time" type of game for bored people on their phones. It is simple, no time constrain, no brain cells affected by playing it. You can play it in a line at Starbucks, during boring conversation, or waiting for your code to compile.
 
+The rules are easy - just find a match to all emojis on a board and TA-DA!!! You won! 
+
 **Technologies Used:** JavaScript, HTML, and CSS
 
 ## User Stories 
