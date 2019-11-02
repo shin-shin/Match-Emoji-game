@@ -3,23 +3,39 @@
 }
 
 body{
-    background-color: cornsilk;
+    background-color: #999999;
 }
 
 .wrapper{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 .content{
-    width:  300px;
-    background-color: antiquewhite;
 }
 header{
     background-image: url();
+    width:500px;
+    height:200px;
 }
 .board{
+    width:500px;
+    height:500px;
     border-color: black;
     border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    background-color: #444444;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.board > div {
+    height: 4rem;
+    width: 4rem;
+    background-color: #888888;
+    border: 1px solid black;
     border-radius: 50%;
 }
 footer{
