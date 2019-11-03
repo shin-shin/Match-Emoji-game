@@ -31,6 +31,7 @@ body{
     align-items: center;
 }
 .content{
+    
 }
 header{
     background-image: url(/imgs/header3.png);
@@ -98,4 +99,24 @@ footer{
     color:rgb(204, 185, 78);
     text-align: right;
     margin: 50px 0 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .board{
+        width:70vh;
+        height:70vh;
+    }
+    .share {
+        height: 25vh;
+        width: 25vh;
+    }
+    .reset {
+        height: 25vh;
+        width: 25vh;
+    }
+    header{
+        width:70vh;
+        height:25vh;
+    }
+
 }
