@@ -36,7 +36,7 @@ body{
 .content{
     
 }
-header{
+header {
     background-image: url(/imgs/header3.png);
     background-size:contain;
     background-repeat: no-repeat;
@@ -59,28 +59,50 @@ header{
     display: flex;
     flex-wrap: wrap;
 }
+.board img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    user-select: none;
+}
+.board .active img {
+    visibility: visible;
+}
 .board > div {
     height: 12.5%;
     width: 12.5%;
     background: rgb(235, 239, 173);
+    background-image: none;
     border: 3px solid rgb(204, 185, 78);
     border-radius: 50%;
+}
+.board > div.active  {
+    background: none;
+    background-size: cover;
+    border: 0px;
+    /* border-radius: 50%; */
+}
+.board > div.active:hover {
+    background:none;
+    border: 0;
 }
 .board > div:hover {
     background: rgb(248, 219, 53);
     border: 3px solid rgb(204, 185, 78);
 }
 .board > div:nth-child(1), .board > div:nth-child(43) {
-    margin-left: 37%;
+    margin-left: 37.5%;
 }
 .board > div:nth-child(2) {
-    margin-right: 35%;
+    margin-right: 37.5%;
 }
 .board > div:nth-child(3), .board > div:nth-child(9), .board > div:nth-child(31), .board > div:nth-child(37) {
-    margin-left: 12%;
+    margin-left: 12.5%;
 }
 .board > div:nth-child(8), .board > div:nth-child(14),  .board > div:nth-child(36), .board > div:nth-child(42) {
-    margin-right: 12%;
+    margin-right: 12.5%;
 }
 
 aside {
