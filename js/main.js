@@ -2,7 +2,7 @@
 const ARR = ["/imgs/drooling-face_1f924.png", "/imgs/face-savouring-delicious-food_1f60b.png", "/imgs/face-throwing-a-kiss_1f618.png", "/imgs/face-with-stuck-out-tongue-and-tightly-closed-eyes_1f61d.png", "/imgs/face-with-stuck-out-tongue-and-winking-eye_1f61c.png", "/imgs/face-with-tears-of-joy_1f602.png", "/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png", "/imgs/grinning-face-with-smiling-eyes_1f601.png", "/imgs/grinning-face-with-star-eyes_1f929.png", "/imgs/kissing-face-with-closed-eyes_1f61a.png", "/imgs/nerd-face_1f913.png", "/imgs/relieved-face_1f60c.png", "/imgs/rolling-on-the-floor-laughing_1f923.png", "/imgs/slightly-smiling-face_1f642.png", "/imgs/smiling-face-with-halo_1f607.png", "/imgs/smiling-face-with-heart-shaped-eyes_1f60d.png", "/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png", "/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png", "/imgs/smiling-face-with-sunglasses_1f60e.png", "/imgs/upside-down-face_1f643.png", "/imgs/white-smiling-face_263a.png", "/imgs/winking-face_1f609.png"]
 
 /*----- app's state (variables) -----*/
-let mix, board, clicked, clicked1, clicked2, matchArr = [], share, reset;
+let mix, board,boardEls, clicked, clicked1, clicked2, matchArr = [], share, reset;
 /*----- cached element references -----*/
 board = document.querySelector(".board");
 share = document.querySelector(".share");
@@ -50,6 +50,7 @@ function match(clicked) {
         //compare
         if (clicked1.innerHTML === clicked2.innerHTML) {
             console.log("true");
+            winCheck(boardEls);
         } else {
             console.log("false");
             console.log(clicked1.classList);
@@ -68,7 +69,18 @@ function match(clicked) {
         clicked1 = clicked2 = "";
     }
 }
-
+function winCheck(boardEls){
+    console.log("win check");
+    // console.log(boardEls);
+    let emojis = Array.from(boardEls);
+    if(emojis.every(a=>a.innerHTML.includes("<img"))){
+        console.log("YOU WON!!!!");
+    }
+    // console.log(boardEls.includes("img"));
+    // if (boardEls.every(a => a.includes("<img"))){
+    //     console.log("YOU WON!!!!")
+    // }
+}
 function shareClick(e) {
     console.log("share");
 
@@ -105,3 +117,7 @@ function init() {
 
     // console.log(boardEls);
 }
+
+
+
+//add different sizes (22 pairs takes a lot of time)
