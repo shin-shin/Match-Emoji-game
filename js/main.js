@@ -73,7 +73,8 @@ function winCheck(boardEls){
     console.log("win check");
     // console.log(boardEls);
     let emojis = Array.from(boardEls);
-    if(emojis.every(a=>a.innerHTML.includes("<img"))){
+    // if(emojis.every(a=>a.innerHTML.includes("<img"))){
+    if(emojis.every(a=>a.classList.contains("active"))){
         console.log("YOU WON!!!!");
     }
     // console.log(boardEls.includes("img"));
