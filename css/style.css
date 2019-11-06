@@ -81,7 +81,45 @@ main.win{
 .board .active img {
     visibility: visible;
 }
-.board > div {
+.small .board > div {
+    height: 25%;
+    width: 25%;
+    background: #ebefad;
+    background-image: none;
+    border: 3px solid #ccb94e;
+    border-radius: 50%;
+}
+.small .board > div:nth-child(1), .small .board > div:nth-child(11) {
+    margin-left: 25%;
+}
+.small .board > div:nth-child(2) {
+    margin-right: 25%;
+}
+
+
+.medium .board > div {
+    height: 15%;
+    width: 15%;
+    background: #ebefad;
+    background-image: none;
+    border: 3px solid #ccb94e;
+    border-radius: 50%;
+}
+.medium .board > div:nth-child(1), .medium .board > div:nth-child(23) {
+    margin-left: 28%;
+}
+.medium .board > div:nth-child(2) {
+    margin-right: 0%;
+}
+.medium .board > div:nth-child(3), .medium .board > div:nth-child(3) {
+    margin-left: 20%;
+}
+.medium .board > div:nth-child(8), .medium .board > div:nth-child(14),  .medium .board > div:nth-child(36), .medium .board > div:nth-child(42) {
+    margin-right: 0%;
+}
+
+
+.large .board > div {
     height: 12.5%;
     width: 12.5%;
     background: #ebefad;
@@ -89,11 +127,24 @@ main.win{
     border: 3px solid #ccb94e;
     border-radius: 50%;
 }
+.large .board > div:nth-child(1), .large .board > div:nth-child(43) {
+    margin-left: 37.5%;
+}
+.large .board > div:nth-child(2) {
+    margin-right: 37.5%;
+}
+.large .board > div:nth-child(3), .large .board > div:nth-child(9), .large .board > div:nth-child(31), .large .board > div:nth-child(37) {
+    margin-left: 12.5%;
+}
+.large .board > div:nth-child(8), .large .board > div:nth-child(14),  .large .board > div:nth-child(36), .large .board > div:nth-child(42) {
+    margin-right: 12.5%;
+}
+
+
 .board > div.active  {
     background: none;
     background-size: cover;
     border: 0px;
-    /* border-radius: 50%; */
 }
 .board > div.active:hover {
     background:none;
@@ -103,18 +154,8 @@ main.win{
     background: rgb(248, 219, 53);
     border: 3px solid rgb(204, 185, 78);
 }
-.board > div:nth-child(1), .board > div:nth-child(43) {
-    margin-left: 37.5%;
-}
-.board > div:nth-child(2) {
-    margin-right: 37.5%;
-}
-.board > div:nth-child(3), .board > div:nth-child(9), .board > div:nth-child(31), .board > div:nth-child(37) {
-    margin-left: 12.5%;
-}
-.board > div:nth-child(8), .board > div:nth-child(14),  .board > div:nth-child(36), .board > div:nth-child(42) {
-    margin-right: 12.5%;
-}
+
+
 
 aside {
     display: flex;
@@ -148,6 +189,15 @@ aside {
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
+}
+.small .size {
+    background-image: url(/imgs/size-small.png);
+}
+.medium  .size{
+    background-image: url(/imgs/size-medium.png);
+}
+.large .size {
+    background-image: url(/imgs/size-large.png);
 }
 .share:hover, .reset:hover, .size:hover  {
     background-color: rgb(11, 70, 19);

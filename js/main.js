@@ -10,13 +10,14 @@ const MEDIUM = 24;
 const SMALL = 12;
 
 /*----- app's state (variables) -----*/
-let mix, board,boardEls, clicked, clicked1, clicked2, share, reset, size;
+let mix, board, boardEls, clicked, clicked1, clicked2, share, reset, size;
 /*----- cached element references -----*/
 board = document.querySelector(".board");
 share = document.querySelector(".share");
 reset = document.querySelector(".reset");
 size = document.querySelector(".size");
 mainEl = document.querySelector("main");
+bodyEl = document.querySelector("body");
 
 /*----- event listeners -----*/
 board.addEventListener("click", handleClick);
@@ -26,9 +27,21 @@ size.addEventListener("click", sizeClick);
 
 /*----- functions -----*/
 init();
-function build() {
-    sizeVal = LARGE;
-    for (var i = 0; i < sizeVal; i++) {
+function build(n) {
+    // sizeVal = LARGE;
+    if (n === "small"){
+        boardSize = SMALL;
+        arr = ARR_SMALL;
+    }
+    if (n === "medium"){
+        boardSize = MEDIUM;
+        arr = ARR_MEDIUM;
+    }
+    if (n === "large"){
+        boardSize = LARGE;
+        arr = ARR_LARGE;
+    }
+    for (var i = 0; i < boardSize; i++) {
         board.innerHTML += "<div></div>";
     }
     boardEls = document.querySelectorAll(".board > div");
@@ -38,7 +51,7 @@ function handleClick(e) {
     e.stopPropagation();
     clicked = e.target;
 
-    if (clicked.className === "board" || clicked.className === "active" || clicked.nodeName == 'IMG' ) {
+    if (clicked.className === "board" || clicked.className === "active" || clicked.nodeName == 'IMG') {
         return;
     } else {
         clicked.className = "active";
@@ -46,14 +59,14 @@ function handleClick(e) {
     }
     return;
 }
-function clearClass(clicked1,clicked2){
+function clearClass(clicked1, clicked2) {
     console.log("time is out, run clearClass()")
     clicked1.classList.remove("active");
     clicked2.classList.remove("active");
 }
-function boardSwitch(clicked2){
+function boardSwitch(clicked2) {
     board.innerHTML = "";
-    mainEl.className ="win";
+    mainEl.className = "win";
     // board.style.background = `url("/imgs/winking-face_1f609.png")`;
     // board.style.background = `url(${})`;
     // clicked2.innerHTML.replace("<img src=","").replace(">","")
@@ -71,23 +84,23 @@ function match(clicked) {
         if (clicked1.innerHTML === clicked2.innerHTML) {
             winCheck(boardEls);
         } else {
-            function clearClass(clicked1,clicked2){
+            function clearClass(clicked1, clicked2) {
                 console.log("time is out, run clearClass()")
                 clicked1.classList.remove("active");
                 clicked2.classList.remove("active");
             }
-            setTimeout(clearClass, 600,clicked1, clicked2)
-            
+            setTimeout(clearClass, 600, clicked1, clicked2)
+
         }
         clicked1 = clicked2 = "";
     }
 }
-function winCheck(boardEls){
+function winCheck(boardEls) {
     console.log("win check");
     let emojis = Array.from(boardEls);
-    if(emojis.every(a=>a.classList.contains("active"))){
+    if (emojis.every(a => a.classList.contains("active"))) {
         console.log("YOU WON!!!!");
-        setTimeout(boardSwitch, 700,clicked1, clicked2)
+        setTimeout(boardSwitch, 700, clicked1, clicked2)
     }
 }
 function shareClick(e) {
@@ -102,7 +115,18 @@ function resetClick(e) {
 }
 function sizeClick(e) {
     board.innerHTML = "";
-    init(size);
+    console.log(bodyEl.classList);
+    if (bodyEl.classList.contains("small")){
+        bodyEl.className = "medium";
+        init("medium");
+    } else if (bodyEl.classList.contains("medium")){
+        bodyEl.className = "large";
+        init("large");
+    } else {
+        bodyEl.className = "small";
+        init("small");
+    }
+
     console.log("size clicked");
 }
 /**
@@ -118,11 +142,12 @@ function shuffleArray(array) {
         array[j] = temp;
     }
 }
-function init() {
-    build();
-    size.style.backgroundImage = "url(/imgs/size-large.png)";
-console.log(size)
-    mix = ARR_LARGE.slice(0);
+function init(n = "large") {
+    // bodyEl.className = n;
+    build(n);
+    // console.log(`n is ${n}`)
+    // console.log(`arr length is ${arr.length}`)
+    mix = arr.slice(0);
     mix.forEach(m => mix.push(m));
     shuffleArray(mix);
     for (i = 0; i < boardEls.length; i++) {
