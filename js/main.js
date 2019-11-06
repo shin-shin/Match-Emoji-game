@@ -10,7 +10,7 @@ const MEDIUM = 24;
 const SMALL = 12;
 
 /*----- app's state (variables) -----*/
-let mix, board, boardEls, clicked, clicked1, clicked2, share, reset, size;
+let mix, board, boardEls, clicked, clicked1, clicked2, share, reset, size, n;
 /*----- cached element references -----*/
 board = document.querySelector(".board");
 share = document.querySelector(".share");
@@ -109,8 +109,9 @@ function shareClick(e) {
 }
 function resetClick(e) {
     board.innerHTML = "";
-    // mainEl.className ="win";
-    init();
+    mainEl.className = "";
+
+    init(n);
     console.log("reset");
 }
 function sizeClick(e) {
@@ -143,7 +144,7 @@ function shuffleArray(array) {
     }
 }
 function init(n = "large") {
-    // bodyEl.className = n;
+    bodyEl.className = n;
     build(n);
     // console.log(`n is ${n}`)
     // console.log(`arr length is ${arr.length}`)

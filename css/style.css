@@ -98,24 +98,24 @@ main.win{
 
 
 .medium .board > div {
-    height: 15%;
-    width: 15%;
+    height: 16.5%;
+    width: 16.5%;
     background: #ebefad;
     background-image: none;
     border: 3px solid #ccb94e;
     border-radius: 50%;
 }
 .medium .board > div:nth-child(1), .medium .board > div:nth-child(23) {
-    margin-left: 28%;
+    margin-left: 33%;
 }
 .medium .board > div:nth-child(2) {
-    margin-right: 0%;
+    margin-right: 33%;
 }
-.medium .board > div:nth-child(3), .medium .board > div:nth-child(3) {
-    margin-left: 20%;
+.medium .board > div:nth-child(3), .medium .board > div:nth-child(19){
+    margin-left: 16.3%;
 }
-.medium .board > div:nth-child(8), .medium .board > div:nth-child(14),  .medium .board > div:nth-child(36), .medium .board > div:nth-child(42) {
-    margin-right: 0%;
+.medium .board > div:nth-child(6) {
+    margin-right: 16.3%;
 }
 
 
