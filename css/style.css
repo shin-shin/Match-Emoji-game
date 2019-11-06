@@ -163,9 +163,15 @@ aside {
     align-items: center;
 }
 
-.share, .reset, .size {
+.share, .reset {
     height: 30vw;
     width: 30vw;
+    border: 2px solid rgb(204, 185, 78);
+    border-radius: 50%;
+}
+.size {
+    height: 20vw;
+    width: 20vw;
     border: 2px solid rgb(204, 185, 78);
     border-radius: 50%;
 }

@@ -100,7 +100,7 @@ function winCheck(boardEls) {
     let emojis = Array.from(boardEls);
     if (emojis.every(a => a.classList.contains("active"))) {
         console.log("YOU WON!!!!");
-        setTimeout(boardSwitch, 700, clicked1, clicked2)
+        setTimeout(boardSwitch, 600, clicked1, clicked2)
     }
 }
 function shareClick(e) {
@@ -143,7 +143,7 @@ function shuffleArray(array) {
         array[j] = temp;
     }
 }
-function init(n = "large") {
+function init(n = "small") {
     bodyEl.className = n;
     build(n);
     // console.log(`n is ${n}`)
