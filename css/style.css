@@ -59,6 +59,17 @@ header {
     display: flex;
     flex-wrap: wrap;
 }
+.win .board{
+    background:none;
+    border-style:none;
+}
+main.win{
+    background: url(/imgs/tada.png);
+    background-size: contain;
+    border-style: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .board img {
     height: 100%;
     width: 100%;
@@ -73,9 +84,9 @@ header {
 .board > div {
     height: 12.5%;
     width: 12.5%;
-    background: rgb(235, 239, 173);
+    background: #ebefad;
     background-image: none;
-    border: 3px solid rgb(204, 185, 78);
+    border: 3px solid #ccb94e;
     border-radius: 50%;
 }
 .board > div.active  {
@@ -108,16 +119,37 @@ header {
 aside {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.share, .reset {
+.share, .reset, .size {
     height: 30vw;
     width: 30vw;
-    background-color: #0A3610;
     border: 2px solid rgb(204, 185, 78);
     border-radius: 50%;
 }
-.share:hover, .reset:hover {
+.share {
+    background: url(/imgs/share.png);
+    background-color: #0A3610;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.reset {
+    background: url(/imgs/reset.png);
+    background-color: #0A3610;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.size {
+    /* background: url(); */
+    background-color: #0A3610;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.share:hover, .reset:hover, .size:hover  {
     background-color: rgb(11, 70, 19);
     border: 2px solid rgb(204, 185, 78);
 }
@@ -130,8 +162,8 @@ footer{
 
 @media only screen and (min-width: 768px) {
     .board{
-        width:70vh;
-        height:70vh;
+        width:60vh;
+        height:60vh;
     }
     .share {
         height: 25vh;
@@ -140,6 +172,10 @@ footer{
     .reset {
         height: 25vh;
         width: 25vh;
+    }
+    .size {
+        height: 15vh;
+        width: 15vh;
     }
     header{
         width:70vh;

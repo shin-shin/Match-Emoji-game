@@ -1,22 +1,34 @@
 /*----- constants -----*/
-const ARR = ["/imgs/drooling-face_1f924.png", "/imgs/face-savouring-delicious-food_1f60b.png", "/imgs/face-throwing-a-kiss_1f618.png", "/imgs/face-with-stuck-out-tongue-and-tightly-closed-eyes_1f61d.png", "/imgs/face-with-stuck-out-tongue-and-winking-eye_1f61c.png", "/imgs/face-with-tears-of-joy_1f602.png", "/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png", "/imgs/grinning-face-with-smiling-eyes_1f601.png", "/imgs/grinning-face-with-star-eyes_1f929.png", "/imgs/kissing-face-with-closed-eyes_1f61a.png", "/imgs/nerd-face_1f913.png", "/imgs/relieved-face_1f60c.png", "/imgs/rolling-on-the-floor-laughing_1f923.png", "/imgs/slightly-smiling-face_1f642.png", "/imgs/smiling-face-with-halo_1f607.png", "/imgs/smiling-face-with-heart-shaped-eyes_1f60d.png", "/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png", "/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png", "/imgs/smiling-face-with-sunglasses_1f60e.png", "/imgs/upside-down-face_1f643.png", "/imgs/white-smiling-face_263a.png", "/imgs/winking-face_1f609.png"]
+const ARR_LARGE = ["/imgs/drooling-face_1f924.png", "/imgs/face-savouring-delicious-food_1f60b.png", "/imgs/face-throwing-a-kiss_1f618.png", "/imgs/face-with-stuck-out-tongue-and-tightly-closed-eyes_1f61d.png", "/imgs/face-with-stuck-out-tongue-and-winking-eye_1f61c.png", "/imgs/face-with-tears-of-joy_1f602.png", "/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png", "/imgs/grinning-face-with-smiling-eyes_1f601.png", "/imgs/grinning-face-with-star-eyes_1f929.png", "/imgs/kissing-face-with-closed-eyes_1f61a.png", "/imgs/nerd-face_1f913.png", "/imgs/relieved-face_1f60c.png", "/imgs/rolling-on-the-floor-laughing_1f923.png", "/imgs/slightly-smiling-face_1f642.png", "/imgs/smiling-face-with-halo_1f607.png", "/imgs/smiling-face-with-heart-shaped-eyes_1f60d.png", "/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png", "/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png", "/imgs/smiling-face-with-sunglasses_1f60e.png", "/imgs/upside-down-face_1f643.png", "/imgs/white-smiling-face_263a.png", "/imgs/winking-face_1f609.png"]
+
+const ARR_MEDIUM = ["/imgs/drooling-face_1f924.png", "/imgs/face-savouring-delicious-food_1f60b.png", "/imgs/face-throwing-a-kiss_1f618.png", "/imgs/face-with-stuck-out-tongue-and-tightly-closed-eyes_1f61d.png", "/imgs/face-with-stuck-out-tongue-and-winking-eye_1f61c.png", "/imgs/face-with-tears-of-joy_1f602.png", "/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png", "/imgs/grinning-face-with-smiling-eyes_1f601.png", "/imgs/grinning-face-with-star-eyes_1f929.png", "/imgs/kissing-face-with-closed-eyes_1f61a.png", "/imgs/nerd-face_1f913.png", "/imgs/relieved-face_1f60c.png"]
+
+const ARR_SMALL = ["/imgs/drooling-face_1f924.png", "/imgs/face-savouring-delicious-food_1f60b.png", "/imgs/face-throwing-a-kiss_1f618.png", "/imgs/face-with-stuck-out-tongue-and-tightly-closed-eyes_1f61d.png", "/imgs/face-with-stuck-out-tongue-and-winking-eye_1f61c.png", "/imgs/face-with-tears-of-joy_1f602.png"]
+
+const LARGE = 44;
+const MEDIUM = 24;
+const SMALL = 12;
 
 /*----- app's state (variables) -----*/
-let mix, board,boardEls, clicked, clicked1, clicked2, share, reset;
+let mix, board,boardEls, clicked, clicked1, clicked2, share, reset, size;
 /*----- cached element references -----*/
 board = document.querySelector(".board");
 share = document.querySelector(".share");
 reset = document.querySelector(".reset");
+size = document.querySelector(".size");
+mainEl = document.querySelector("main");
 
 /*----- event listeners -----*/
 board.addEventListener("click", handleClick);
 share.addEventListener("click", shareClick);
 reset.addEventListener("click", resetClick);
+size.addEventListener("click", sizeClick);
 
 /*----- functions -----*/
 init();
 function build() {
-    for (var i = 0; i < 44; i++) {
+    sizeVal = LARGE;
+    for (var i = 0; i < sizeVal; i++) {
         board.innerHTML += "<div></div>";
     }
     boardEls = document.querySelectorAll(".board > div");
@@ -41,7 +53,10 @@ function clearClass(clicked1,clicked2){
 }
 function boardSwitch(clicked2){
     board.innerHTML = "";
-    board.style.background = `url(${clicked2.replace("<img src=","").replace(">","")})`;
+    mainEl.className ="win";
+    // board.style.background = `url("/imgs/winking-face_1f609.png")`;
+    // board.style.background = `url(${})`;
+    // clicked2.innerHTML.replace("<img src=","").replace(">","")
 }
 
 function match(clicked) {
@@ -72,7 +87,7 @@ function winCheck(boardEls){
     let emojis = Array.from(boardEls);
     if(emojis.every(a=>a.classList.contains("active"))){
         console.log("YOU WON!!!!");
-        setTimeout(boardSwitch, 500,clicked1, clicked2)
+        setTimeout(boardSwitch, 700,clicked1, clicked2)
     }
 }
 function shareClick(e) {
@@ -81,10 +96,14 @@ function shareClick(e) {
 }
 function resetClick(e) {
     board.innerHTML = "";
-
+    // mainEl.className ="win";
     init();
     console.log("reset");
-
+}
+function sizeClick(e) {
+    board.innerHTML = "";
+    init(size);
+    console.log("size clicked");
 }
 /**
  * https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -101,13 +120,14 @@ function shuffleArray(array) {
 }
 function init() {
     build();
-    mix = ARR.slice(0);
+    size.style.backgroundImage = "url(/imgs/size-large.png)";
+console.log(size)
+    mix = ARR_LARGE.slice(0);
     mix.forEach(m => mix.push(m));
     shuffleArray(mix);
     for (i = 0; i < boardEls.length; i++) {
         boardEls[i].innerHTML = `<img src=${mix[i]}></img>`;
     }
-
 }
 
 
