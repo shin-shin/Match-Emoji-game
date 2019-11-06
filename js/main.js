@@ -151,7 +151,7 @@ function init(n = "large") {
     mix.forEach(m => mix.push(m));
     shuffleArray(mix);
     for (i = 0; i < boardEls.length; i++) {
-        boardEls[i].innerHTML = `<img src=${mix[i]}></img>`;
+        boardEls[i].innerHTML = `<img src="${mix[i]}"></img>`;
     }
 }
 
