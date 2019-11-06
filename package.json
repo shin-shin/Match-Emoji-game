@@ -1,0 +1,19 @@
+{
+  "name": "match-emoji-game",
+  "version": "1.0.0",
+  "description": "This is a \"kill time\" type of game for bored people on their phones. It is simple, no time constrain, no brain cells affected by playing it. You can play it in a line at Starbucks, during boring conversation, or waiting for your code to compile.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shin-shin/Match-Emoji-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shin-shin/Match-Emoji-game/issues"
+  },
+  "homepage": "https://github.com/shin-shin/Match-Emoji-game#readme"
+}

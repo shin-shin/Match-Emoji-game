@@ -33,11 +33,11 @@ body{
     align-items: center;
     
 }
-.content{
+/* .content{
     
-}
+} */
 header {
-    background-image: url("imgs/header3.png");
+    background-image: url("/imgs/header3.png");
     background-size:contain;
     background-repeat: no-repeat;
     width:90vw;
