@@ -118,12 +118,15 @@ function sizeClick(e) {
     board.innerHTML = "";
     console.log(bodyEl.classList);
     if (bodyEl.classList.contains("small")){
+        mainEl.className = "";
         bodyEl.className = "medium";
         init("medium");
     } else if (bodyEl.classList.contains("medium")){
+        mainEl.className = "";
         bodyEl.className = "large";
         init("large");
     } else {
+        mainEl.className = "";
         bodyEl.className = "small";
         init("small");
     }
@@ -152,7 +155,7 @@ function init(n = "small") {
     mix.forEach(m => mix.push(m));
     shuffleArray(mix);
     for (i = 0; i < boardEls.length; i++) {
-        boardEls[i].innerHTML = `<img src="${mix[i]}"></img>`;
+        boardEls[i].innerHTML = `<img src=".${mix[i]}"></img>`;
     }
 }
 

@@ -37,7 +37,7 @@ body{
     
 } */
 header {
-    background-image: url("/imgs/header3.png");
+    background-image: url("../imgs/header3.png");
     background-size:contain;
     background-repeat: no-repeat;
     width:90vw;
@@ -64,7 +64,7 @@ header {
     border-style:none;
 }
 main.win{
-    background: url("/imgs/tada.png");
+    background: url("../imgs/tada.png");
     background-size: contain;
     border-style: none;
     background-repeat: no-repeat;
@@ -176,14 +176,14 @@ aside {
     border-radius: 50%;
 }
 .share {
-    background: url("/imgs/share.png");
+    background: url("../imgs/share.png");
     background-color: #0A3610;
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .reset {
-    background: url("/imgs/reset.png");
+    background: url("../imgs/reset.png");
     background-color: #0A3610;
     background-size: 70%;
     background-repeat: no-repeat;
@@ -197,13 +197,13 @@ aside {
     background-position: center;
 }
 .small .size {
-    background-image: url("/imgs/size-small.png");
+    background-image: url("../imgs/size-small.png");
 }
 .medium  .size{
-    background-image: url("/imgs/size-medium.png");
+    background-image: url("../imgs/size-medium.png");
 }
 .large .size {
-    background-image: url("/imgs/size-large.png");
+    background-image: url("../imgs/size-large.png");
 }
 .share:hover, .reset:hover, .size:hover  {
     background-color: rgb(11, 70, 19);
