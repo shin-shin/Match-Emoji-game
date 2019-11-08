@@ -33,16 +33,15 @@ const ARR_MEDIUM = ["/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970
 "/imgs/face-with-cowboy-hat_1f920.png",
 "/imgs/face-with-tears-of-joy_1f602.png",
 "/imgs/pile-of-poo_1f4a9.png",
-"/imgs/smiling-face-with-halo_1f607.png"
-]
+"/imgs/smiling-face-with-halo_1f607.png"]
 
 
 const ARR_SMALL = ["/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png",
-    "/imgs/smiling-face-with-sunglasses_1f60e.png",
-    "/imgs/winking-face_1f609.png",
-    "/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png",
-    "/imgs/nerd-face_1f913.png",
-    "/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png"]
+"/imgs/smiling-face-with-sunglasses_1f60e.png",
+"/imgs/winking-face_1f609.png",
+"/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png",
+"/imgs/nerd-face_1f913.png",
+"/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png"]
 
 const LARGE = 44;
 const MEDIUM = 24;
@@ -132,8 +131,6 @@ function match(clicked) {
         }
         clicked1 = clicked2 = "";
     }
-
-
 }
 function winCheck(boardEls) {
     let emojis = Array.from(boardEls);

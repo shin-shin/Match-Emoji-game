@@ -34,7 +34,7 @@ As a depressed person I want to feel like I completed something that doesn't req
 ![sepia](https://github.com/shin-shin/Match-Emoji-game/blob/master/imgs/color5.png)
 
 
-## For future improovment
+## For future improvement
 
 1. Add CSS/JS confetti after the win
 2. Improve image sizing to more responsive
