@@ -2,7 +2,7 @@
 
 This is a "kill time" type of game for bored people on their phones. It is a simple game, no time constrain, and no brain cells affected by playing it. You can play Match Emoji game in a line at Starbucks, during a boring conversation, or waiting for your code to compile.
 
-### [Play the game](http://match-emoji-game.surge.sh)
+## [Play the game](http://match-emoji-game.surge.sh)
 
 The rules are easy - just find a match to all emojis on a board and TA-DA!!! You won! 
 
