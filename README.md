@@ -18,7 +18,7 @@ As a depressed person I want to feel like I completed something that doesn't req
 
 ## Wireframes
 
-![initial state](https://github.com/shin-shin/Match-Emoji-game/blob/master/imgs/1-play1.png) ![play state](https://github.com/shin-shin/Match-Emoji-game/blob/master/imgs/2-play2.png) ![win](https://github.com/shin-shin/Match-Emoji-game/blob/master/imgs/3-win.png)
+![initial state](https://github.com/shin-shin/Match-Emoji-game/blob/master/imgs/1-play1.png)![play state](https://github.com/shin-shin/Match-Emoji-game/blob/master/imgs/2-play2.png)![win](https://github.com/shin-shin/Match-Emoji-game/blob/master/imgs/3-win.png)
 
 ## Screenshots
 
