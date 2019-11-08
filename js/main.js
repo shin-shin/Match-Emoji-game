@@ -9,13 +9,11 @@ const LARGE = 44;
 const MEDIUM = 24;
 const SMALL = 12;
 
-const SOUNDS = {
-    click: 'sounds/click.wav',
-    doubleClick: '/sounds/double-click.wav',
-    tada: 'sounds/tada.mp3',
-}
 /*----- app's state (variables) -----*/
-let mix, wrapper, board, boardEls, clicked, clicked1, clicked2, share, reset, size, n, boardSize, arr, colorScheme;
+let mix, wrapper, board, boardEls, clicked, clicked1, clicked2, share, reset, size, n, c, boardSize, arr, colorScheme;
+n = "small";
+c = "green";
+
 /*----- cached element references -----*/
 wrapper = document.querySelector(".wrapper");
 board = document.querySelector(".board");
@@ -32,12 +30,9 @@ reset.addEventListener("click", resetClick);
 size.addEventListener("click", sizeClick);
 
 /*----- functions -----*/
-n = "small";
-c = "green";
 init(n, c);
 
 function build(n) {
-    // sizeVal = LARGE;
     if (n === "small") {
         boardSize = SMALL;
         arr = ARR_SMALL;
@@ -70,7 +65,6 @@ function handleClick(e) {
     return;
 }
 function clearClass(clicked1, clicked2) {
-    console.log("time is out, run clearClass()")
     clicked1.classList.remove("active");
     clicked2.classList.remove("active");
 }
@@ -92,29 +86,23 @@ function match(clicked) {
             winCheck(boardEls);
         } else {
             function clearClass(clicked1, clicked2) {
-                console.log("time is out, run clearClass()")
                 clicked1.classList.remove("active");
                 clicked2.classList.remove("active");
             }
             setTimeout(clearClass, 600, clicked1, clicked2);
-
         }
         clicked1 = clicked2 = "";
-
     }
 
 
 }
 function winCheck(boardEls) {
-    console.log("win check");
     let emojis = Array.from(boardEls);
     if (emojis.every(a => a.classList.contains("active"))) {
-        console.log("YOU WON!!!!");
         setTimeout(boardSwitch, 600, clicked1, clicked2)
     }
 }
 function colorClick(e) {
-    console.log("color");
     switch (c) {
         case "green":
             c = "vaporwave"
@@ -138,18 +126,12 @@ function colorClick(e) {
     colorSwitch(c);
 }
 function colorSwitch(c) {
-    // mainEl.className = "";
-    // bodyEl.className = n;
-    //color reset
     wrapper.className = `wrapper ${c}`;
-    console.log("color switch");
-    // init(n,c);
 
 }
 function resetClick(e) {
     board.innerHTML = "";
     sizeSwitch(n);
-    console.log("reset");
 }
 function sizeClick(e) {
     board.innerHTML = "";
@@ -161,7 +143,6 @@ function sizeClick(e) {
         n = "small"
     }
     sizeSwitch(n)
-    console.log("size clicked");
     return
 }
 function sizeSwitch(n) {
@@ -185,9 +166,6 @@ function shuffleArray(array) {
 function init(n = "small", c = "green") {
     bodyEl.className = n;
     build(n);
-
-    // console.log(`n is ${n}`)
-    // console.log(`arr length is ${arr.length}`)
     mix = arr.slice(0);
     mix.forEach(m => mix.push(m));
     shuffleArray(mix);
@@ -199,26 +177,7 @@ function init(n = "small", c = "green") {
 
 
 
-//add different sizes (22 pairs takes a lot of time)
 
-//presentation is at 11am
-//
-//--add color switch
-//add sounds
-//-add confetti
-
-//no lunch?
-//7 minutes:
-//why i did this, readme, play, issues, feedback
-//receive a score for the project
-
-//one extencion is allowed, except of the last project (on a day of graduation)
-//third project is a group one, so no extention
-//may use it for project 2
-
-//log in zoom, share screen, stand up and present, using github
-//project u r pitching to angel investor
-//explain code so everyone can understand
 
 
 
