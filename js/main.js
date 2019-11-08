@@ -20,7 +20,7 @@ const ARR_LARGE = ["/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.
 "/imgs/japanese-ogre_1f479.png",
 "/imgs/money-mouth-face_1f911.png",
 "/imgs/hugging-face_1f917.png",
-"/imgs/whinking-face_1f914.png"]
+"/imgs/thinking-face_1f914.png"]
 
 const ARR_MEDIUM = ["/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png",
 "/imgs/smiling-face-with-sunglasses_1f60e.png",
