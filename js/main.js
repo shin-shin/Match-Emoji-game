@@ -9,11 +9,17 @@ const LARGE = 44;
 const MEDIUM = 24;
 const SMALL = 12;
 
+const SOUNDS = {
+    click: 'sounds/click.wav',
+    doubleClick: '/sounds/double-click.wav',
+    tada: 'sounds/tada.mp3',
+}
 /*----- app's state (variables) -----*/
-let mix, board, boardEls, clicked, clicked1, clicked2, share, reset, size, n;
+let mix, wrapper, board, boardEls, clicked, clicked1, clicked2, share, reset, size, n, boardSize, arr, colorScheme;
 /*----- cached element references -----*/
+wrapper = document.querySelector(".wrapper");
 board = document.querySelector(".board");
-share = document.querySelector(".share");
+colorBtn = document.querySelector(".color");
 reset = document.querySelector(".reset");
 size = document.querySelector(".size");
 mainEl = document.querySelector("main");
@@ -21,23 +27,26 @@ bodyEl = document.querySelector("body");
 
 /*----- event listeners -----*/
 board.addEventListener("click", handleClick);
-share.addEventListener("click", shareClick);
+colorBtn.addEventListener("click", colorClick);
 reset.addEventListener("click", resetClick);
 size.addEventListener("click", sizeClick);
 
 /*----- functions -----*/
-init();
+n = "small";
+c = "green";
+init(n, c);
+
 function build(n) {
     // sizeVal = LARGE;
-    if (n === "small"){
+    if (n === "small") {
         boardSize = SMALL;
         arr = ARR_SMALL;
     }
-    if (n === "medium"){
+    if (n === "medium") {
         boardSize = MEDIUM;
         arr = ARR_MEDIUM;
     }
-    if (n === "large"){
+    if (n === "large") {
         boardSize = LARGE;
         arr = ARR_LARGE;
     }
@@ -57,6 +66,7 @@ function handleClick(e) {
         clicked.className = "active";
         match(clicked);
     }
+    document.getElementById("click-sound").play();
     return;
 }
 function clearClass(clicked1, clicked2) {
@@ -67,11 +77,8 @@ function clearClass(clicked1, clicked2) {
 function boardSwitch(clicked2) {
     board.innerHTML = "";
     mainEl.className = "win";
-    // board.style.background = `url("/imgs/winking-face_1f609.png")`;
-    // board.style.background = `url(${})`;
-    // clicked2.innerHTML.replace("<img src=","").replace(">","")
+    document.getElementById("tada").play();
 }
-
 function match(clicked) {
     //open first
     if (!clicked1) {
@@ -89,11 +96,14 @@ function match(clicked) {
                 clicked1.classList.remove("active");
                 clicked2.classList.remove("active");
             }
-            setTimeout(clearClass, 600, clicked1, clicked2)
+            setTimeout(clearClass, 600, clicked1, clicked2);
 
         }
         clicked1 = clicked2 = "";
+
     }
+
+
 }
 function winCheck(boardEls) {
     console.log("win check");
@@ -103,35 +113,61 @@ function winCheck(boardEls) {
         setTimeout(boardSwitch, 600, clicked1, clicked2)
     }
 }
-function shareClick(e) {
-    console.log("share");
+function colorClick(e) {
+    console.log("color");
+    switch (c) {
+        case "green":
+            c = "vaporwave"
+            break;
+        case "vaporwave":
+            c = "ghost"
+            break;
+        case "ghost":
+            c = "neon"
+            break;
+        case "neon":
+            c = "oldtown"
+            break;
+        case "neon":
+            c = "oldtown"
+            break;
+        default:
+            //default to green
+            c = "green"
+    }
+    colorSwitch(c);
+}
+function colorSwitch(c) {
+    // mainEl.className = "";
+    // bodyEl.className = n;
+    //color reset
+    wrapper.className = `wrapper ${c}`;
+    console.log("color switch");
+    // init(n,c);
 
 }
 function resetClick(e) {
     board.innerHTML = "";
-    mainEl.className = "";
-
-    init(n);
+    sizeSwitch(n);
     console.log("reset");
 }
 function sizeClick(e) {
     board.innerHTML = "";
-    console.log(bodyEl.classList);
-    if (bodyEl.classList.contains("small")){
-        mainEl.className = "";
-        bodyEl.className = "medium";
-        init("medium");
-    } else if (bodyEl.classList.contains("medium")){
-        mainEl.className = "";
-        bodyEl.className = "large";
-        init("large");
+    if (n === "small") {
+        n = "medium"
+    } else if (n === "medium") {
+        n = "large"
     } else {
-        mainEl.className = "";
-        bodyEl.className = "small";
-        init("small");
+        n = "small"
     }
-
+    sizeSwitch(n)
     console.log("size clicked");
+    return
+}
+function sizeSwitch(n) {
+    mainEl.className = "";
+    bodyEl.className = n;
+    init(n, c);
 }
 /**
  * https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -146,9 +182,10 @@ function shuffleArray(array) {
         array[j] = temp;
     }
 }
-function init(n = "small") {
+function init(n = "small", c = "green") {
     bodyEl.className = n;
     build(n);
+
     // console.log(`n is ${n}`)
     // console.log(`arr length is ${arr.length}`)
     mix = arr.slice(0);
@@ -157,8 +194,33 @@ function init(n = "small") {
     for (i = 0; i < boardEls.length; i++) {
         boardEls[i].innerHTML = `<img src=".${mix[i]}"></img>`;
     }
+
 }
 
 
 
 //add different sizes (22 pairs takes a lot of time)
+
+//presentation is at 11am
+//
+//--add color switch
+//add sounds
+//-add confetti
+
+//no lunch?
+//7 minutes:
+//why i did this, readme, play, issues, feedback
+//receive a score for the project
+
+//one extencion is allowed, except of the last project (on a day of graduation)
+//third project is a group one, so no extention
+//may use it for project 2
+
+//log in zoom, share screen, stand up and present, using github
+//project u r pitching to angel investor
+//explain code so everyone can understand
+
+
+
+
+
