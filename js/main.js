@@ -1,9 +1,48 @@
 /*----- constants -----*/
-const ARR_LARGE = ["/imgs/drooling-face_1f924.png", "/imgs/face-savouring-delicious-food_1f60b.png", "/imgs/face-throwing-a-kiss_1f618.png", "/imgs/face-with-stuck-out-tongue-and-tightly-closed-eyes_1f61d.png", "/imgs/face-with-stuck-out-tongue-and-winking-eye_1f61c.png", "/imgs/face-with-tears-of-joy_1f602.png", "/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png", "/imgs/grinning-face-with-smiling-eyes_1f601.png", "/imgs/grinning-face-with-star-eyes_1f929.png", "/imgs/kissing-face-with-closed-eyes_1f61a.png", "/imgs/nerd-face_1f913.png", "/imgs/relieved-face_1f60c.png", "/imgs/rolling-on-the-floor-laughing_1f923.png", "/imgs/slightly-smiling-face_1f642.png", "/imgs/smiling-face-with-halo_1f607.png", "/imgs/smiling-face-with-heart-shaped-eyes_1f60d.png", "/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png", "/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png", "/imgs/smiling-face-with-sunglasses_1f60e.png", "/imgs/upside-down-face_1f643.png", "/imgs/white-smiling-face_263a.png", "/imgs/winking-face_1f609.png"]
+const ARR_LARGE = ["/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png",
+"/imgs/smiling-face-with-sunglasses_1f60e.png",
+"/imgs/winking-face_1f609.png",
+"/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png",
+"/imgs/nerd-face_1f913.png",
+"/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png",
+"/imgs/face-savouring-delicious-food_1f60b.png",
+"/imgs/face-throwing-a-kiss_1f618.png",
+"/imgs/face-with-cowboy-hat_1f920.png",
+"/imgs/face-with-tears-of-joy_1f602.png",
+"/imgs/pile-of-poo_1f4a9.png",
+"/imgs/smiling-face-with-halo_1f607.png",
+"/imgs/robot-face_1f916.png",
+"/imgs/overheated-face_1f975.png",
+"/imgs/smiling-face-with-horns_1f608.png",
+"/imgs/freezing-face_1f976.png",
+"/imgs/extraterrestrial-alien_1f47d.png",
+"/imgs/drooling-face_1f924.png",
+"/imgs/japanese-ogre_1f479.png",
+"/imgs/money-mouth-face_1f911.png",
+"/imgs/hugging-face_1f917.png",
+"/imgs/hinking-face_1f914.png"]
 
-const ARR_MEDIUM = ["/imgs/drooling-face_1f924.png", "/imgs/face-savouring-delicious-food_1f60b.png", "/imgs/face-throwing-a-kiss_1f618.png", "/imgs/face-with-stuck-out-tongue-and-tightly-closed-eyes_1f61d.png", "/imgs/face-with-stuck-out-tongue-and-winking-eye_1f61c.png", "/imgs/face-with-tears-of-joy_1f602.png", "/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png", "/imgs/grinning-face-with-smiling-eyes_1f601.png", "/imgs/grinning-face-with-star-eyes_1f929.png", "/imgs/kissing-face-with-closed-eyes_1f61a.png", "/imgs/nerd-face_1f913.png", "/imgs/relieved-face_1f60c.png"]
+const ARR_MEDIUM = ["/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png",
+"/imgs/smiling-face-with-sunglasses_1f60e.png",
+"/imgs/winking-face_1f609.png",
+"/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png",
+"/imgs/nerd-face_1f913.png",
+"/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png",
+"/imgs/face-savouring-delicious-food_1f60b.png",
+"/imgs/face-throwing-a-kiss_1f618.png",
+"/imgs/face-with-cowboy-hat_1f920.png",
+"/imgs/face-with-tears-of-joy_1f602.png",
+"/imgs/pile-of-poo_1f4a9.png",
+"/imgs/smiling-face-with-halo_1f607.png"
+]
 
-const ARR_SMALL = ["/imgs/drooling-face_1f924.png", "/imgs/face-savouring-delicious-food_1f60b.png", "/imgs/face-throwing-a-kiss_1f618.png", "/imgs/face-with-stuck-out-tongue-and-tightly-closed-eyes_1f61d.png", "/imgs/face-with-stuck-out-tongue-and-winking-eye_1f61c.png", "/imgs/face-with-tears-of-joy_1f602.png"]
+
+const ARR_SMALL = ["/imgs/smiling-face-with-smiling-eyes-and-three-hearts_1f970.png",
+    "/imgs/smiling-face-with-sunglasses_1f60e.png",
+    "/imgs/winking-face_1f609.png",
+    "/imgs/smiling-face-with-open-mouth-and-tightly-closed-eyes_1f606.png",
+    "/imgs/nerd-face_1f913.png",
+    "/imgs/grinning-face-with-one-large-and-one-small-eye_1f92a.png"]
 
 const LARGE = 44;
 const MEDIUM = 24;
