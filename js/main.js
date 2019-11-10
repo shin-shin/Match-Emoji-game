@@ -47,11 +47,15 @@ const LARGE = 44;
 const MEDIUM = 24;
 const SMALL = 12;
 
+const SOUNDS = {
+    click: new Audio('sounds/click.wav'),
+    doubleClick: new Audio('sounds/double-click.wav'),
+    tada: new Audio('sounds/tada.mp3'),
+}
 /*----- app's state (variables) -----*/
-let mix, wrapper, board, boardEls, clicked, clicked1, clicked2, share, reset, size, n, c, boardSize, arr, colorScheme;
+let mix, wrapper, board, boardEls, clicked, clicked1, clicked2, share, reset, size, n, c, boardSize, arr, colorScheme, player;
 n = "small";
 c = "green";
-
 /*----- cached element references -----*/
 wrapper = document.querySelector(".wrapper");
 board = document.querySelector(".board");
@@ -99,18 +103,20 @@ function handleClick(e) {
         clicked.className = "active";
         match(clicked);
     }
-    document.getElementById("click-sound").play();
+    SOUNDS.click.play();
     return;
 }
 function clearClass(clicked1, clicked2) {
     clicked1.classList.remove("active");
     clicked2.classList.remove("active");
+
 }
 function boardSwitch(clicked2) {
     board.innerHTML = "";
     mainEl.className = "win";
-    document.getElementById("tada").play();
+    SOUNDS.tada.play();
 }
+
 function match(clicked) {
     //open first
     if (!clicked1) {
@@ -123,10 +129,6 @@ function match(clicked) {
         if (clicked1.innerHTML === clicked2.innerHTML) {
             winCheck(boardEls);
         } else {
-            function clearClass(clicked1, clicked2) {
-                clicked1.classList.remove("active");
-                clicked2.classList.remove("active");
-            }
             setTimeout(clearClass, 600, clicked1, clicked2);
         }
         clicked1 = clicked2 = "";

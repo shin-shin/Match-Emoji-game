@@ -17,11 +17,9 @@ body{
 }
 .ghost{
     filter: invert(75%) drop-shadow(0px 16px 20px red);
-
 }
 .neon{
     filter: hue-rotate(310deg);
-
 }
 .oldtown{
     filter: sepia(90%) contrast(110%);
